@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Data Konsumen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding bg-content">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor="let item of rental_datas" style="background-color:#cf1d94" class="custom-card">
+    <ion-card-header>
+      <ion-card-subtitle>
+        TypeUnit: {{ item.TypeUnit }}, Layanan: {{ item.Layanan }}
+      </ion-card-subtitle>
+      <ion-card-title>{{ item.NamaPembooking }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      No.Hp: {{ item.nohp }},<br>
+      TanggalBooking: {{ item.TanggalBooking }},<br>
+      TanggalPengembalian: {{ item.TanggalPengembalian }},<br>
+      Keterangan: {{ item.Keterangan }},<br>
+      HargaPerhari: {{ item.HargaPerhari }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

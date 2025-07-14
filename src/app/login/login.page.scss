@@ -1,0 +1,38 @@
+.content-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  background-color: #f4f4f4;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+ion-card-title {
+  font-size: 1.4rem;
+}
+
+ion-card-subtitle {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+ion-button {
+  font-size: 0.95rem;
+  height: 42px;
+}
+
+.form-list ion-item {
+  --highlight-color-focused: #3a73f8;
+}
+
+ion-note {
+  margin-left: 16px;
+  font-size: 0.8rem;
+}

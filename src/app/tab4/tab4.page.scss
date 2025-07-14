@@ -1,0 +1,26 @@
+.custom-card {
+  border-left: 6px solid #dbbb05; 
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+  background-color: #bd3c14; 
+
+  ion-card-title {
+    font-size: 1.4em;
+    color: #0f0f0f; 
+  }
+
+  ion-card-subtitle {
+    font-size: 0.95em;
+    color: #121213;
+  }
+
+  ion-card-content {
+    font-size: 1em;
+    color: #111011;
+
+    p {
+      margin: 4px 0;
+    }
+  }
+}

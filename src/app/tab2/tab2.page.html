@@ -1,17 +1,79 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrasi Konsumen</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding bg-content">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="color: #eb07eb;">Registrasi</ion-card-title>
+      <ion-card-subtitle>Silakan isikan form di bawah untuk pendataan.</ion-card-subtitle>
+    </ion-card-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Nama Pembooking</ion-label>
+          <ion-input type="text" [(ngModel)]="NamaPembooking" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Nomor HP/WA</ion-label>
+          <ion-input type="tel" [(ngModel)]="nohp" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Tanggal Booking</ion-label>
+          <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="TanggalBooking" required></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Tanggal Pengembalian</ion-label>
+          <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="TanggalPengembalian" required></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Type Unit</ion-label>
+          <ion-select [(ngModel)]="TypeUnit" placeholder="Pilih Type Unit">
+            <ion-select-option *ngFor="let type of [
+              'Brio','Agya','Ayla','Sigra','Calya','Avanza New','Xenia New','Avanza Old','Xenia Old',
+              'Xpander','Camry','Inova Reborn AT','Fortuner','Pajero Sport','Suzuki XL7','BRV',
+              'Mobilio','Ertiga','Rush','Terios','Alphard','Hiace']" [value]="type">
+              {{ type }}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Harga Per Hari</ion-label>
+          <ion-input type="number" [(ngModel)]="HargaPerhari" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Layanan</ion-label>
+          <ion-select [(ngModel)]="Layanan" placeholder="Pilih Layanan">
+            <ion-select-option value="LepasKunci">Lepas Kunci</ion-select-option>
+            <ion-select-option value="IncludeDriver">Include Driver</ion-select-option>
+            <ion-select-option value="IncludeDriver+BBM">Include Driver + BBM</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Keterangan</ion-label>
+          <ion-input type="text" [(ngModel)]="Keterangan"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <div class="ion-padding">
+        <ion-button expand="block" color="primary" (click)="addRegister()">
+          <ion-icon slot="start" name="checkmark-outline"></ion-icon>
+          Daftar
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
